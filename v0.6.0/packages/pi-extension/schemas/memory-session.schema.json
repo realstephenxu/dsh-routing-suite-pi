@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-memory-session.schema.json",
+  "title": "Pi Session Memory",
+  "type": "object",
+  "required": ["sessionId", "workspace"],
+  "properties": {
+    "sessionId": { "type": "string" },
+    "workspace": { "type": "string" },
+    "activeTopicId": { "type": "string" },
+    "topics": { "type": "array", "items": { "$ref": "memory-topic.schema.json" } },
+    "lastSummary": { "type": "string" },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
