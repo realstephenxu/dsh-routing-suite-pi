@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Pi](https://img.shields.io/badge/Pi-Agent-6f42c1)
 ![Model Agnostic](https://img.shields.io/badge/Model-Agnostic-brightgreen)
-![Version](https://img.shields.io/badge/version-0.5.0-blue)
+![Version](https://img.shields.io/badge/version-0.6.0-blue)
 
 ---
 
@@ -117,6 +117,9 @@ plan | inspect | fix | build | adaptive | weak | auto
 | `/dsh-memory-distill` | Distill current session memory / 蒸馏当前会话记忆 |
 | `/dsh-memory-summary` | Show distilled summary / 显示蒸馏摘要 |
 | `/dsh-memory-config` | Show memory policy / 显示记忆策略 |
+| `/dsh-trajectory` | Show current trajectory / 显示当前轨迹 |
+| `/dsh-phase <phase>` | Set trajectory phase / 设置轨迹阶段 |
+| `/dsh-trajectory-mode <mode>` | Set trajectory mode / 设置轨迹模式 |
 
 ---
 
@@ -125,7 +128,7 @@ plan | inspect | fix | build | adaptive | weak | auto
 ### Use the latest version / 使用最新版本
 
 ```bash
-cd v0.5.0
+cd v0.6.0
 npm install
 npm run build
 npm test
@@ -202,9 +205,10 @@ Memory is stored in:
 | `v0.3.0` | 0.3.0 | Session memory & context re-injection / 会话记忆与上下文再注入 |
 | `v0.4.0` | 0.4.0 | Cross-session memory search & recall / 跨会话记忆检索与召回 |
 | `v0.5.0` | 0.5.0 | Memory distillation & compaction optimization / 记忆蒸馏与压缩优化 |
+| `v0.6.0` | 0.6.0 | Trajectory state & lightweight control / 轨迹状态与轻量控制 |
 
-> Latest stable: **v0.5.0**
-> 最新稳定版：**v0.5.0**
+> Latest stable: **v0.6.0**
+> 最新稳定版：**v0.6.0**
 
 ---
 
