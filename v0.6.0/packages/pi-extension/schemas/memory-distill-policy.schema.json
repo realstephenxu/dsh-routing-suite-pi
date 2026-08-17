@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-memory-distill-policy.schema.json",
+  "title": "Pi Memory Distill Policy",
+  "type": "object",
+  "properties": {
+    "maxDecisions": { "type": "integer", "minimum": 0, "default": 8 },
+    "maxDesigns": { "type": "integer", "minimum": 0, "default": 5 },
+    "maxErrors": { "type": "integer", "minimum": 0, "default": 5 },
+    "maxTodos": { "type": "integer", "minimum": 0, "default": 5 },
+    "maxSummaryChars": { "type": "integer", "minimum": 0, "default": 2000 }
+  },
+  "additionalProperties": false
+}
