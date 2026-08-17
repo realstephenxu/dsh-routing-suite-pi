@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-trajectory-state.schema.json",
+  "title": "Pi Trajectory State",
+  "type": "object",
+  "required": ["route", "phase", "objective", "evidence", "blockers"],
+  "properties": {
+    "route": { "type": "string" },
+    "phase": {
+      "enum": ["IDLE", "UNDERSTAND", "INSPECT", "DIAGNOSE", "PLAN", "IMPLEMENT", "TEST", "VERIFY", "DONE", "BLOCKED"]
+    },
+    "objective": { "type": "string" },
+    "evidence": { "$ref": "memory-entry.schema.json" },
+    "blockers": { "type": "array", "items": { "type": "string" } },
+    "nextPhase": {
+      "enum": ["IDLE", "UNDERSTAND", "INSPECT", "DIAGNOSE", "PLAN", "IMPLEMENT", "TEST", "VERIFY", "DONE", "BLOCKED"]
+    },
+    "updatedAt": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
