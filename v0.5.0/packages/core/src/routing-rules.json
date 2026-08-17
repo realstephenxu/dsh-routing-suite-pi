@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "signals": {
+    "greeting": "^\\s*(?:hi|hello|hey|thanks|thank\\s+you|good\\s+(?:morning|afternoon|evening|night)|你好|您好|嗨|谢谢|多谢|早上好|下午好|晚上好|晚安|再见|拜拜|在吗|在不在)[!！,.，。?？\\s]*$",
+    "planExplicit": "(?:\\b(?:only|just)\\s+(?:make|write|give|create)?\\s*(?:a\\s+)?plan\\b|\\bplan\\s+only\\b|只(?:要|需|做|写|给).{0,6}(?:计划|方案)|先.{0,6}(?:计划|规划).{0,4}(?:不要|不必|无需).{0,4}(?:修改|实现|动手)|(?:制定|出|给|写|提供).{0,6}(?:一?个|一份)?(?:实施|技术|行动)?(?:计划|方案)|(?:帮|请)我?.{0,4}(?:规划|计划)(?:一下|一个)?|\\b(?:make|write|give|create|provide)\\s+(?:me\\s+)?(?:a|an|the)?\\s*(?:technical|implementation|action|migration)?\\s*plan\\b)",
+    "inspect": "(?:\\b(?:inspect|review|explain|analy[sz]e|audit|understand|investigate|diagnose|debug|status|why|error|failure|failing|broken|exception|regression|verify|check|validate|evaluate|reproduce)\\b|查看|检查|审查|解释|分析|审计|了解|调查|诊断|调试|排查|状态|为什么|报错|错误|失败|故障|异常|回归|验证|核对|复核|复现|评估|定位)",
+    "fix": "(?:\\b(?:fix|repair|correct|resolve|patch|remediate|optimize)\\b|修复|修正|纠正|解决|补丁|补救|优化)",
+    "build": "(?:\\b(?:implement|build|create|add|change|update|migrate|refactor|write|generate|scaffold|adapt|port|integrate|modify|install|uninstall|remove|delete|merge|deploy|publish|release|optimize|configure|split)\\b|实现|创建|新增|修改|更新|迁移|重构|编写|生成|搭建|适配|移植|集成|安装|卸载|删除|合并|部署|发布|配置|优化|拆分)",
+    "complex": "(?:\\b(?:architecture|architectural|system|cross[- ]component|integration|migration|migrate|refactor|compatibility|security|concurrency|distributed|edge cases?|performance|scale|scalable|regression|vulnerability)\\b|架构|系统性|跨组件|集成|迁移|重构|兼容|安全|并发|分布式|边界情况|性能|大规模|回归|漏洞)|全面|详细|设计|系统|优化|分析",
+    "noChange": "(?:不要|别|请勿|无需|不必|不用|禁止|不|do not|don'?t|never|without)\\s*(?:改|改动|修改|改变|变更|修复|实现|创建|删除|写入|编辑|动手|动|change|modify|edit|fix|implement|create|delete|write)",
+    "engineering": "(?:代码|程序|脚本|函数|模块|服务|接口|项目|系统|库|组件|页面|功能|实现|开发|构建|部署|code|program|script|function|module|service|api|project|system|library|component|page|feature|implement|develop|build|deploy)"
+  },
+  "complexity": {
+    "minLength": 120
+  },
+  "guidance": {
+    "prefix": "Router identity: DSH-ROUTER-V1. DSH routing is advisory only. Active system, developer, user, permission, sandbox, and repository instructions take precedence; this hint never expands authority. Do not branch on the model name or provider. Reclassify from the current prompt rather than inheriting a prior persona.",
+    "plan": "Stay within plan-mode constraints. Gather evidence read-only and return a decision-complete plan; do not edit or perform side effects.",
+    "inspect": "Inspect or reproduce before concluding. Report evidence and likely cause. Do not implement a fix unless the user has authorized a change.",
+    "fix": "Inspect or reproduce first, then apply the smallest compatible fix and run a focused regression check. Finish with the verified outcome.",
+    "build": "Produce the requested deliverable, follow local conventions, and verify it in proportion to risk. Finish with a usable result.",
+    "adaptive": "This request mixes repair and construction. Classify each immediate subtask afresh: inspect before fixing, implement when authorized, and verify each transition.",
+    "simpleTail": "Keep one action per sentence. Make a decision every 2-3 sentences, then continue. Act, verify, report.",
+    "complexTail": "Check architecture, dependencies, integration points, compatibility, and relevant edge cases. Keep one action per sentence. End each reasoning block with a decision or an information need. Stop when evidence is sufficient.",
+    "weTeamBuild": "We/我们：先分类任务——build → 直接生产。我们的节奏：每句一个动作；每 2-3 句一个决策句然后继续。我们验证、我们收敛、我们交付。",
+    "weTeamFix": "We/我们：先分类任务——fix → 先查后修。我们的节奏：每句一个动作；每 2-3 句一个决策句然后继续。我们验证、我们收敛、我们交付。",
+    "weTeamAdaptive": "We/我们：先分类任务——混合任务，先查后修再构建。我们的节奏：每句一个动作；每 2-3 句一个决策句然后继续。我们验证、我们收敛、我们交付。"
+  }
+}

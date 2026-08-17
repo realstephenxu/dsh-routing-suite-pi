@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/dsh-router-output.schema.json",
+  "title": "DSH Router Output",
+  "type": "object",
+  "required": ["route", "complex", "marker", "identity", "guidance"],
+  "properties": {
+    "route": { "enum": ["plan", "inspect", "fix", "build", "adaptive"] },
+    "complex": { "type": "boolean" },
+    "marker": { "type": "string", "pattern": "^\[DSH route: .+; .+; rules v\d+\]$" },
+    "identity": { "type": "string" },
+    "guidance": { "type": "string" }
+  }
+}

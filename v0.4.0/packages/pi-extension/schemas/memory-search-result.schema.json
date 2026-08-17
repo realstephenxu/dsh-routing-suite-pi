@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-memory-search-result.schema.json",
+  "title": "Pi Memory Search Result",
+  "type": "object",
+  "required": ["query", "results"],
+  "properties": {
+    "query": { "type": "string" },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entry", "topicTitle", "sessionId", "score"],
+        "properties": {
+          "entry": { "$ref": "memory-entry.schema.json" },
+          "topicTitle": { "type": "string" },
+          "sessionId": { "type": "string" },
+          "score": { "type": "number" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

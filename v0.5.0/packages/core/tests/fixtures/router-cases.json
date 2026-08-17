@@ -1,0 +1,12 @@
+[
+  { "name": "empty prompt is off", "payload": { "prompt": "", "permission_mode": "default", "model": "anything" }, "route": "off" },
+  { "name": "greeting is off", "payload": { "prompt": "你好！", "permission_mode": "default", "model": "codex-a" }, "route": "off" },
+  { "name": "permission plan wins", "payload": { "prompt": "实现这个功能", "permission_mode": "plan", "model": "codex-b" }, "route": "plan" },
+  { "name": "explicit plan only", "payload": { "prompt": "只做实施方案，不要修改文件", "permission_mode": "default" }, "route": "plan" },
+  { "name": "diagnosis stays inspect", "payload": { "prompt": "诊断这个报错并告诉我原因", "permission_mode": "default" }, "route": "inspect" },
+  { "name": "explicit repair is fix", "payload": { "prompt": "修复登录失败并运行回归测试", "permission_mode": "default" }, "route": "fix" },
+  { "name": "adaptation is build", "payload": { "prompt": "把这个插件适配到 Codex", "permission_mode": "default" }, "route": "build" },
+  { "name": "repair plus refactor is adaptive", "payload": { "prompt": "修复崩溃并重构这个模块", "permission_mode": "default" }, "route": "adaptive" },
+  { "name": "model slug is ignored", "payload": { "prompt": "review the architecture", "permission_mode": "default", "model": "future-codex-999" }, "route": "inspect" },
+  { "name": "neutral conversation is off", "payload": { "prompt": "今天天气不错", "permission_mode": "default" }, "route": "off" }
+]

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-memory-search-request.schema.json",
+  "title": "Pi Memory Search Request",
+  "type": "object",
+  "required": ["query"],
+  "properties": {
+    "query": { "type": "string" },
+    "workspace": { "type": "string" },
+    "limit": { "type": "integer", "minimum": 1, "default": 5 },
+    "minScore": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.25 }
+  },
+  "additionalProperties": false
+}

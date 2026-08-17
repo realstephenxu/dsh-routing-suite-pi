@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/dsh-routing-rules.v3.schema.json",
+  "title": "DSH Routing Rules v3 (target)",
+  "type": "object",
+  "required": ["version", "signals", "complexity", "guidance"],
+  "properties": {
+    "version": { "type": "integer", "minimum": 3 },
+    "signals": {
+      "type": "object",
+      "required": [
+        "greeting",
+        "planExplicit",
+        "inspect",
+        "fix",
+        "build",
+        "engineering",
+        "complex",
+        "noChange"
+      ],
+      "additionalProperties": { "type": "string" }
+    },
+    "complexity": {
+      "type": "object",
+      "required": ["minLength"],
+      "properties": {
+        "minLength": { "type": "integer", "minimum": 0, "default": 120 }
+      }
+    },
+    "guidance": {
+      "type": "object",
+      "required": [
+        "prefix",
+        "plan",
+        "inspect",
+        "fix",
+        "build",
+        "adaptive",
+        "simpleTail",
+        "complexTail"
+      ],
+      "properties": {
+        "prefix": { "type": "string" },
+        "plan": { "type": "string" },
+        "inspect": { "type": "string" },
+        "fix": { "type": "string" },
+        "build": { "type": "string" },
+        "adaptive": { "type": "string" },
+        "simpleTail": { "type": "string" },
+        "complexTail": { "type": "string" },
+        "weTeamBuild": { "type": "string" },
+        "weTeamFix": { "type": "string" },
+        "weTeamAdaptive": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

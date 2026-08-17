@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/dsh-routing-rules.schema.json",
+  "title": "DSH Routing Rules",
+  "type": "object",
+  "required": ["version", "signals", "complexity", "guidance"],
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "signals": {
+      "type": "object",
+      "required": ["greeting", "planExplicit", "inspect", "fix", "build", "complex", "noChange"],
+      "additionalProperties": { "type": "string" }
+    },
+    "complexity": {
+      "type": "object",
+      "required": ["minLength"],
+      "properties": { "minLength": { "type": "integer", "minimum": 0 } }
+    },
+    "guidance": {
+      "type": "object",
+      "required": ["prefix", "plan", "inspect", "fix", "build", "adaptive", "simpleTail", "complexTail"],
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

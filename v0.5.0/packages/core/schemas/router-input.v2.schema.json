@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/dsh-router-input.v2.schema.json",
+  "title": "DSH Router Input v2 (target)",
+  "type": "object",
+  "required": ["prompt"],
+  "properties": {
+    "prompt": { "type": "string" },
+    "permissionMode": { "type": "string" },
+    "permission_mode": { "type": "string" },
+    "model": { "type": "string" },
+    "allowWeak": { "type": "boolean", "default": false },
+    "overrideRoute": { "enum": ["plan", "inspect", "fix", "build", "adaptive", "off", "auto"] }
+  },
+  "additionalProperties": false
+}

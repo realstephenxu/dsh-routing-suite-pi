@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-tool-phase.schema.json",
+  "title": "Pi Tool Phase",
+  "type": "object",
+  "properties": {
+    "phase": {
+      "enum": ["minimal", "full"]
+    },
+    "trigger": {
+      "enum": ["first_tool_call", "turn_end", "manual", "none"]
+    },
+    "route": {
+      "enum": ["plan", "inspect", "fix", "build", "adaptive", "off"]
+    }
+  },
+  "required": ["phase"],
+  "additionalProperties": false
+}

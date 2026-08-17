@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-compaction-result.schema.json",
+  "title": "Pi Compaction Result",
+  "type": "object",
+  "required": ["summary"],
+  "properties": {
+    "summary": { "type": "string" },
+    "firstKeptEntryId": { "type": "string" },
+    "tokensBefore": { "type": "integer" }
+  },
+  "additionalProperties": false
+}

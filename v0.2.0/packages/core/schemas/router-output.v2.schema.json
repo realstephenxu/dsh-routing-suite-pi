@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/dsh-router-output.v2.schema.json",
+  "title": "DSH Router Output v2 (target)",
+  "type": "object",
+  "required": ["route", "complex", "marker", "identity", "guidance"],
+  "properties": {
+    "route": { "enum": ["plan", "inspect", "fix", "build", "adaptive", "weak"] },
+    "complex": { "type": "boolean" },
+    "marker": { "type": "string" },
+    "identity": { "type": "string" },
+    "guidance": { "type": "string" },
+    "suggestedMinimalTools": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "twoPhase": { "type": "boolean", "default": false }
+  },
+  "additionalProperties": false
+}

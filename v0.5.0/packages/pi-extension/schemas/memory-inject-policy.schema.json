@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-memory-inject-policy.schema.json",
+  "title": "Pi Memory Inject Policy",
+  "type": "object",
+  "properties": {
+    "enabled": { "type": "boolean", "default": false },
+    "maxChars": { "type": "integer", "minimum": 0, "default": 4000 },
+    "maxDecisions": { "type": "integer", "minimum": 0, "default": 8 },
+    "maxFiles": { "type": "integer", "minimum": 0, "default": 12 },
+    "maxErrors": { "type": "integer", "minimum": 0, "default": 5 },
+    "maxTodos": { "type": "integer", "minimum": 0, "default": 5 },
+    "topK": { "type": "integer", "minimum": 1, "default": 5 },
+    "minScore": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.4 },
+    "injectOn": {
+      "enum": ["every_turn", "active_topic_only", "before_compact"],
+      "default": "active_topic_only"
+    }
+  },
+  "additionalProperties": false
+}

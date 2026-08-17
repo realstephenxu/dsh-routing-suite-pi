@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-route-override.schema.json",
+  "title": "Pi Route Override",
+  "type": "object",
+  "required": ["route"],
+  "properties": {
+    "route": {
+      "enum": ["plan", "inspect", "fix", "build", "adaptive", "off", "auto"]
+    },
+    "scope": {
+      "enum": ["next", "session"],
+      "default": "next"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}

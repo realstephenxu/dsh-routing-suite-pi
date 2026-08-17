@@ -1,0 +1,33 @@
+{
+  "name": "dsh-routing-pi",
+  "version": "0.1.0",
+  "description": "Pi Agent extension for model-agnostic DSH routing with Plan Mode support",
+  "license": "MIT",
+  "main": "dist/extension.js",
+  "types": "dist/extension.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "pi": {
+    "extensions": [
+      "./dist/extension.js"
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "dsh-routing-core": "file:../core"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.84.2",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.5.0"
+  }
+}

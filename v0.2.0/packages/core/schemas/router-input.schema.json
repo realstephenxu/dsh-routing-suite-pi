@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/dsh-router-input.schema.json",
+  "title": "DSH Router Input",
+  "type": "object",
+  "required": ["prompt"],
+  "properties": {
+    "prompt": { "type": "string" },
+    "permissionMode": { "type": "string" },
+    "model": { "type": "string", "description": "Must be ignored; only used to verify model-agnostic behavior" }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "dsh-routing-suite-pi",
+  "version": "0.5.0",
+  "private": true,
+  "description": "Model-agnostic DSH routing for Pi Agent, with an independent core npm package",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace dsh-routing-core && npm run build --workspace dsh-routing-pi",
+    "test": "npm run test --workspace dsh-routing-core && npm run test --workspace dsh-routing-pi"
+  }
+}

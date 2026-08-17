@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-memory-topic.schema.json",
+  "title": "Pi Memory Topic",
+  "type": "object",
+  "required": ["id", "title", "status", "source"],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" }, "maxItems": 8 },
+    "status": { "enum": ["in_progress", "completed"] },
+    "decisions": { "type": "array", "items": { "$ref": "memory-entry.schema.json" } },
+    "designs": { "type": "array", "items": { "$ref": "memory-entry.schema.json" } },
+    "errors": { "type": "array", "items": { "$ref": "memory-entry.schema.json" } },
+    "todos": { "type": "array", "items": { "$ref": "memory-entry.schema.json" } },
+    "files": { "type": "array", "items": { "type": "string" } },
+    "source": {
+      "type": "object",
+      "required": ["firstSeen", "sessionId"],
+      "properties": {
+        "firstSeen": { "type": "string", "format": "date-time" },
+        "sessionId": { "type": "string" }
+      }
+    },
+    "derivedFrom": { "type": "string" },
+    "links": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

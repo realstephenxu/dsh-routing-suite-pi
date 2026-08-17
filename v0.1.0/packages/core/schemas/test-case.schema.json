@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/dsh-test-case.schema.json",
+  "title": "DSH Routing Test Case",
+  "type": "object",
+  "required": ["id", "scenario", "difficulty", "prompt", "route", "complex", "scope"],
+  "properties": {
+    "id": { "type": "string" },
+    "scenario": { "type": "string" },
+    "difficulty": { "enum": ["L1", "L2", "L3", "L4"] },
+    "prompt": { "type": "string" },
+    "permission_mode": { "type": "string" },
+    "model": { "type": "string" },
+    "route": { "enum": ["plan", "inspect", "fix", "build", "adaptive", "off"] },
+    "complex": { "type": "boolean" },
+    "scope": { "enum": ["read_only", "change", "no_engineering"] },
+    "live": { "type": "boolean" }
+  }
+}

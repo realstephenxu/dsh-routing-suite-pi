@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-router-config.schema.json",
+  "title": "Pi Router Config",
+  "type": "object",
+  "properties": {
+    "twoPhaseTools": {
+      "type": "boolean",
+      "default": false,
+      "description": "Enable first-turn minimal tool surface and expand after first tool call."
+    },
+    "expandAfterFirstToolCall": {
+      "type": "boolean",
+      "default": true,
+      "description": "Expand to full tools after the first real tool call."
+    },
+    "minimalTools": {
+      "type": "object",
+      "description": "Per-route minimal tool lists used when twoPhaseTools is enabled.",
+      "properties": {
+        "plan": { "type": "array", "items": { "type": "string" } },
+        "inspect": { "type": "array", "items": { "type": "string" } },
+        "fix": { "type": "array", "items": { "type": "string" } },
+        "build": { "type": "array", "items": { "type": "string" } },
+        "adaptive": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": { "type": "array", "items": { "type": "string" } }
+    },
+    "enableStatusCommand": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableRouteOverride": {
+      "type": "boolean",
+      "default": true
+    },
+    "guidanceStyle": {
+      "enum": ["neutral", "we-team"],
+      "default": "neutral",
+      "description": "Use neutral guidance or optional We-Team style borrowed from original v0.4."
+    }
+  },
+  "additionalProperties": false
+}
