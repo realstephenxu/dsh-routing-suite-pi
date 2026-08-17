@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/pi-memory-entry.schema.json",
+  "title": "Pi Memory Entry",
+  "type": "object",
+  "required": ["id", "kind", "content", "source"],
+  "properties": {
+    "id": { "type": "string" },
+    "kind": {
+      "enum": ["decision", "design", "error", "todo", "preference", "fact"]
+    },
+    "content": { "type": "string" },
+    "importance": { "type": "integer", "minimum": 1, "maximum": 10, "default": 5 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "source": {
+      "type": "object",
+      "required": ["sessionId"],
+      "properties": {
+        "sessionId": { "type": "string" },
+        "excerpt": { "type": "string" }
+      }
+    },
+    "supersededBy": { "type": "string" }
+  },
+  "additionalProperties": false
+}
